@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peace Mission</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            margin-top: 120px;
+            background: linear-gradient(to right, #ffffff, #cce7ff);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            font-size: 28px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .blue-btn {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .rose-btn {
+            background-color: #b76e79;
+            color: white;
+        }
+
+        .white-btn {
+            background-color: white;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+        }
+
+        button:hover {
+            transform: scale(1.07);
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="question">Are you mad at me, Rasmalai? 💙</h2>
+
+    <div id="buttons">
+        <button class="blue-btn" onclick="madYes()">Yes</button>
+        <button class="white-btn" onclick="forgiven()">No</button>
+    </div>
+
+    <script>
+        let sorryCount = 1;
+
+        function madYes() {
+            let message = "I'm really sorry";
+            for (let i = 1; i < sorryCount; i++) {
+                message += " sorry";
+            }
+            message += " 🤍 Please forgive me, Rasmalai.";
+
+            document.getElementById("question").innerHTML = message;
+
+            document.getElementById("buttons").innerHTML = `
+                <button class="blue-btn" onclick="forgiven()">Forgiven 💙</button>
+                <button class="rose-btn" onclick="notForgiven()">Not Forgiven</button>
+            `;
+        }
+
+        function notForgiven() {
+            sorryCount++;
+            madYes();
+        }
+
+        function forgiven() {
+            document.getElementById("question").innerHTML = "Yayyy 💙 Rasmalai is not mad anymore!";
+            document.getElementById("buttons").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
+
 
