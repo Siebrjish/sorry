@@ -11,12 +11,13 @@
         }
 
         h2 {
-            color: #1e3a8a; /* Deep blue */
+            color: #1e3a8a;
+            font-size: 28px;
         }
 
         button {
             padding: 12px 25px;
-            margin: 10px;
+            margin: 12px;
             font-size: 16px;
             border: none;
             border-radius: 25px;
@@ -30,7 +31,7 @@
         }
 
         .rose-btn {
-            background-color: #b76e79; /* Rose gold vibe */
+            background-color: #b76e79;
             color: white;
         }
 
@@ -41,13 +42,13 @@
         }
 
         button:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
         }
     </style>
 </head>
 <body>
 
-    <h2 id="question">Are you mad at me?</h2>
+    <h2 id="question">Are you mad at me, Rasmalai? 💙</h2>
 
     <div id="buttons">
         <button class="blue-btn" onclick="madYes()">Yes</button>
@@ -58,16 +59,16 @@
         let sorryCount = 1;
 
         function madYes() {
-            let message = "Sorry";
+            let message = "I'm really sorry";
             for (let i = 1; i < sorryCount; i++) {
                 message += " sorry";
             }
-            message += " 🤍 Please forgive me.";
+            message += " 🤍 Please forgive me, Rasmalai.";
 
             document.getElementById("question").innerHTML = message;
 
             document.getElementById("buttons").innerHTML = `
-                <button class="blue-btn" onclick="forgiven()">Forgiven</button>
+                <button class="blue-btn" onclick="forgiven()">Forgiven 💙</button>
                 <button class="rose-btn" onclick="notForgiven()">Not Forgiven</button>
             `;
         }
@@ -78,7 +79,7 @@
         }
 
         function forgiven() {
-            document.getElementById("question").innerHTML = "Yay 💙 Thank you for forgiving me!";
+            document.getElementById("question").innerHTML = "Yayyy 💙 Rasmalai is not mad anymore!";
             document.getElementById("buttons").innerHTML = "";
         }
     </script>
